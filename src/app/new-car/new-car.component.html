@@ -1,0 +1,72 @@
+
+<main>
+  <h2>Add new car</h2>
+  <form>
+    <div class="form-field div1">
+      <label for="brand">Brand</label>
+      <input type="text" id="brand"/>
+    </div>
+
+    <div class="form-field div2">
+      <label for="model">Model</label>
+      <input type="text" id="model">
+    </div>
+
+    <div class="form-field div3">
+      <label for="cubic-cap">Cubic Cap</label>
+      <input type="number" id="cubic-cap">
+    </div>
+
+    <div class="form-field div4">
+      <label for="serial-number">Serial Number</label>
+      <input type="text" id="serial-number">
+    </div>
+
+    <div class="form-field div5" id="type-select">
+      <label for="type">Type</label>
+      <select id="type">
+
+      </select>
+    </div>
+
+
+    <div class="form-field div6">
+      <label for="plates">Plates</label>
+      <input type="text" id="plates">
+    </div>
+
+    <div class="form-field div8">
+      <label for="power">Power</label>
+      <input type="number" id="power">
+    </div>
+
+
+    <div class="form-field div9" id="owner-select">
+      <label for="owner-id">Owner ID</label>
+      <select id="owner-id">
+
+      </select>
+    </div>
+
+    <div class="form-field div7" id="fuelType">
+      <p>Fuel Type:<p>
+      <input type="radio" id="fuel-{{fuel1.tip}}}" name="fuel-type" value="HTML">
+      <label for="fuel-{{fuel1.tip}}}" >{{fuel1.titlu}}</label><br>
+
+      <input type="radio" id="fuel-{{fuel2.tip}}}" name="fuel-type" value="HTML">
+      <label for="fuel-{{fuel2.tip}}}" >{{fuel2.titlu}}</label><br>
+
+      <input type="radio" id="fuel-{{fuel3.tip}}}" name="fuel-type" value="HTML">
+      <label for="fuel-{{fuel3.tip}}}" >{{fuel3.titlu}}</label><br>
+
+
+    </div>
+
+    <div class="action-button" id="buttons">
+      <button id="ADD" type="button">Add new cars</button>
+      <button  id="RESET" type="button">Reset form</button>
+    </div>
+
+  </form>
+</main>
+

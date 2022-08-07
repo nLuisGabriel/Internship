@@ -1,0 +1,44 @@
+//:root{
+//  --main-bg-color: #dfdfef;
+//  --form-bg-color: #ddd;
+//  --main-border-color: #ccc;
+//  --main-text-color: #fff;
+//  --app-green: #4CAF50;
+//  --app-black: #101010;
+//}
+
+#navigation {
+  display: flex;
+  list-style: none;
+}
+#navigation > li{
+  border-right: 2px solid #ebcbca;
+}
+
+#navigation > li > a{
+  display: block;
+  color: black;
+  background-color: #dfdfef;
+  text-decoration: none;
+  padding: 14px 16px;
+
+}
+header>nav>ul>li:first-child>a{
+  border-radius: 5px 0 0 5px;
+}
+
+header>nav>ul > li:last-child > a {
+  border-radius: 0 5px 5px 0;
+}
+header>nav>ul > li:last-child >a {
+  border-right: none;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  height: 5rem;
+}
+header > .logo {
+  height: 200%;
+}
