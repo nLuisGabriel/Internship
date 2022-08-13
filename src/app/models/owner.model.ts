@@ -1,6 +1,7 @@
 import {GenderType} from "../enums/gender-enum";
 
 export class Owner {
+  private  _ID? : number;
   private _firstName: string;
   private _lastName: string;
   private _birthDate: Date;
@@ -8,6 +9,7 @@ export class Owner {
   private _gender: GenderType;
 
   constructor(
+
     firstName: string,
     lastName: string,
     birthdate: Date,
@@ -19,7 +21,19 @@ export class Owner {
     this._birthDate = birthdate;
     this._cnp = cnp;
     this._gender = gender;
+
   }
+
+  public get id(){
+    return this._ID;
+  }
+
+  public set id( id: number | undefined){
+    this._ID= id;
+  }
+
+
+
 
   public get firstName() {
     return this._firstName;

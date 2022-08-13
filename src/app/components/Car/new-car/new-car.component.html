@@ -1,0 +1,78 @@
+<div>{{componentTitle | uppercase}}</div>
+<div> {{myDate | date: 'dd.MMM , YYYY hh:mm:ss' }} </div>
+<main>
+  <h2>Add new car</h2>
+  <form *ngIf="carForm" [formGroup]="carForm" (ngSubmit)="submitForm()">
+    <div class="form-field div1">
+      <label for="brand">Brand</label>
+<!--      name="carBrand" [ngModel]="this.carToEdit?.brand"-->
+      <input type="text" appSetFocus id="brand" formControlName="brand" />
+    </div>
+
+    <div class="form-field div2">
+      <label for="model">Model</label>
+<!--      ngmModel [ngModel]="this.carToEdit?.model"-->
+      <input type="text" id="model" formControlName="model" >
+      <span *ngIf="carForm.controls.model.hasError('maxlength')" class="error"> String is to loong</span>
+    </div>
+
+<!--    [ngModel]="this.carToEdit?.cubicCap"-->
+    <div class="form-field div3">
+      <label for="cubic-cap">Cubic Cap </label>
+      <input type="number" id="cubic-cap"  formControlName="cubicCap">
+    </div>
+
+<!--    <input type="text" ngModel id="serial-number" name="carSerialNumber" [ngModel]="this.carToEdit?.serialNumber">-->
+    <div class="form-field div4">
+      <label for="serial-number">Serial Number</label>
+      <input type="text"  id="serial-number" formControlName="serialNumber">
+    </div>
+
+<!--    <select id="type" ngModel name="carType" [ngModel]="this.carToEdit?.type">-->
+    <div class="form-field div5" id="type-select">
+      <label for="type">Type</label>
+      <select id="type" formControlName="type">
+
+      </select>
+    </div>
+
+
+<!--    <input type="text" ngModel id="plates" name="carPlates" [ngModel]="this.carToEdit?.plates">-->
+    <div class="form-field div6">
+      <label for="plates">Plates</label>
+      <input type="text"  id="plates" formControlName="plates">
+    </div>
+
+<!--    <input type="number" ngModel id="power" name="carPower" [ngModel]="this.carToEdit?.power">-->
+    <div class="form-field div8">
+      <label for="power">Power</label>
+      <input type="number" id="power" formControlName="power">
+    </div>
+
+
+    <div class="form-field div9" id="owner-select">
+      <label for="owner-id">Owner ID</label>
+      <select id="owner-id"  formControlName="ownerID">
+
+      </select>
+    </div>
+
+    <div class="form-field div7" id="fuelType">
+      <p>Fuel Type:<p>
+      <input type="radio" id="fuel{{fuel1.tip}}}" formControlName="fuelType" value="{{fuel1.titlu}}" >
+      <label for="fuel-{{fuel1.tip}}" >{{fuel1.titlu}}</label><br>
+
+      <input type="radio" id="fuel-{{fuel2.tip}}" formControlName="fuelType" value="{{fuel2.titlu}}" >
+      <label for="fuel-{{fuel2.tip}}" >{{fuel2.titlu}}</label><br>
+
+      <input type="radio" id="fuel-{{fuel3.tip}}" formControlName="fuelType" value="{{fuel3.titlu}}" >
+      <label for="fuel-{{fuel3.tip}}" >{{fuel3.titlu}}</label><br>
+
+
+    </div>
+
+    <app-buttons [buttonName]="!!carToEdit ? 'Save Changes' : 'Add car'" (sendResetValues)="resetValues()"></app-buttons>
+  <button (click)="patchFormValue()">fill</button>
+  </form>
+</main>
+

@@ -1,0 +1,35 @@
+<main>
+  <h2>Add new person</h2>
+  <div class="body">
+    <form #ownerForm="ngForm" (ngSubmit)="submitOwnerForm(ownerForm)">
+      <div class="form-field grid-col-span-2">
+        <label for="firs-name">First Name</label>
+        <input type="text" ngModel id="firs-name" [ngModel]="this.ownerReceived?.firstName" name="ownerFirstName"/>
+      </div>
+      <div class="form-field grid-col-span-2">
+        <label for="last-name">Last Name</label>
+        <input type="text" ngModel id="last-name" [ngModel]="this.ownerReceived?.lastName" name="ownerLastName"/>
+      </div>
+      <div class="form-field">
+        <label for="birthdate">Birth Date</label>
+        <input type="date" ngModel id="birthdate"  [ngModel]="this.ownerReceived?.birthDate" name="ownerBirthDate"/>
+      </div>
+      <div class="form-field">
+        <label for="cnp">Identification Number</label>
+        <input type="text" ngModel id="cnp"  [ngModel]="this.ownerReceived?.cnp" name="ownerCnp"/>
+      </div>
+      <div class="form-field" id="gender-select">
+        <label for="gender">Gender</label>
+        <select id="gender" ngModel name="ownerGender" [ngModel]="this.ownerReceived?.gender">
+          <option value="Masculine">Masculine</option>
+          <option value="Feminine">Feminine</option>
+          <option value="N/A">N/A</option>
+        </select>
+      </div>
+      <div class="action-buttons">
+        <button id="submit-button" type="submit" >Add person</button>
+        <button id="submit-button2" type="button" (click)="info(ownerForm)">Modify person</button>
+      </div>
+    </form>
+  </div>
+</main>

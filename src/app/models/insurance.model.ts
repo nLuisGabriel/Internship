@@ -2,7 +2,7 @@ export class Insurance {
   private _company: string;
   private _ownerID: number;
   private _carId: string;
-  private _directPay: string;
+  private _directPay: boolean;
   private _paymentType: string;
   private _startDate: Date;
   private _endDate: Date;
@@ -13,7 +13,7 @@ export class Insurance {
     company: string,
     ownerID: number,
     carId: string,
-    directPay: string,
+    directPay: boolean,
     paymentType: string,
     startDate: Date,
     endDate: Date,
@@ -29,6 +29,13 @@ export class Insurance {
     this._endDate = endDate;
     this._price = price;
     this._notes = notes;
+  }
+
+  public get directPay(){
+    return this._directPay;
+  }
+  public set directPay(directPay:boolean){
+    this._directPay=directPay;
   }
 
   public get company() {
@@ -89,5 +96,12 @@ export class Insurance {
     this._notes = notes
   }
 
+  public get endDate(){
+    return this._endDate;
+  }
+
+  public set endDate(endDate:Date){
+    this._endDate=endDate;
+  }
 
 }

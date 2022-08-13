@@ -1,4 +1,5 @@
 export class Car {
+  private _ID? :number;
   private _brand: string;
   private _model: string;
   private _cubicCap: number;
@@ -30,6 +31,10 @@ export class Car {
     this._power = power;
     this._ownerID = ownerID;
   }
+
+  public get ID(){return this._ID};
+  public set ID(id: number | undefined){this._ID=id};
+
 
   public get brand() {
     return this._brand;

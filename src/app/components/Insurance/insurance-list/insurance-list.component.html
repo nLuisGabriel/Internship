@@ -1,0 +1,31 @@
+<table>
+  <tr>
+    <th>Id</th>
+    <th>Company</th>
+    <th>PersonID</th>
+    <th>CarID</th>
+    <th>DirectPay</th>
+    <th>Tip Plata</th>
+    <th>Start Date</th>
+    <th>End Date</th>
+    <th>Price</th>
+    <th>Note</th>
+    <th>Edit Section</th>
+
+  </tr>
+  <tr *ngFor="let insurance of this.insuranceList; let i=index">
+    <td>{{i}}</td>
+    <td>{{insurance.company}}</td>
+    <td>{{insurance.ownerID}}</td>
+    <td>{{insurance.carId}}</td>
+    <td>{{insurance.directPay}}</td>
+    <td>{{insurance.paymentType}}</td>
+    <td>{{insurance.startDate}}</td>
+    <td>{{insurance.endDate}}</td>
+    <td>{{insurance.price | currency :'USD':'symbol-narrow'}}</td>
+    <td>{{insurance.notes}}</td>
+    <button>Edit button</button>
+  </tr>
+
+</table>
+

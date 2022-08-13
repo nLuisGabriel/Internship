@@ -1,44 +1,40 @@
 
 <main>
   <h2>Add new Insurance</h2>
-  <form>
+  <form #insuranceForm="ngForm" (ngSubmit)="submitInsuranceForm(insuranceForm)">
     <div class="form-field form-field2">
       <label for="company">Company</label>
-      <input type="text" id="company"/>
+      <input type="text" ngModel id="company" name="insuranceCompany"/>
     </div>
 
     <div class="form-field form-field2">
       <label for="person-id">Person ID</label>
-      <select id="person-id">
-        <option value="1">P1</option>
-        <option value="2">P2</option>
-        <option value="3">P3</option>
+      <select id="person-id" ngModel name="insurancePersodID">
+        <option value="P1">P1</option>
+        <option value="P2">P2</option>
+        <option value="P3">P3</option>
       </select>
     </div>
 
     <div class="form-field form-field2">
       <label for="car-id">Card ID</label>
-      <select id="car-id">
-        <option value="1">C1</option>
-        <option value="2">C2</option>
-        <option value="3">C3</option>
+      <select id="car-id" ngModel name="insuranceCardId">
+        <option value="C1">C1</option>
+        <option value="C2">C2</option>
+        <option value="C3">C3</option>
       </select>
     </div>
 
     <div class="form-field div4">
       <h4> Direct pay:</h4>
-      <ul class="lista-pay">
+      <ul class="lista-pay" >
         <li>
-          <input type="checkbox" id="pay1" name="pay-method" value="1">
-          <label for="pay1">Pay 1</label><br>
+          <input type="radio" id="pay1"  ngModel name="directPay" value="true">
+          <label for="pay1">Yes</label><br>
         </li>
         <li>
-          <input type="checkbox" id="pay2" name="pay-method" value="1">
-          <label for="pay2">Pay 2</label><br>
-        </li>
-        <li>
-          <input type="checkbox" id="pay3" name="pay-method" value="1">
-          <label for="pay3">Pay 3</label><br>
+          <input type="radio" id="pay2" ngModel name="directPay" value="false">
+          <label for="pay2">No</label><br>
         </li>
       </ul>
 
@@ -52,15 +48,15 @@
       <h4>Tip plata:</h4>
       <ul class="lista-method">
         <li>
-          <input type="radio" id="CreditCard" name="pay-method" value="pay1">
+          <input type="radio" ngModel id="CreditCard" name="payMethod" value="Credit Card">
           <label for="CreditCard">Credit Card</label><br>
         </li>
         <li>
-          <input type="radio" id="Numerar" name="pay-method" value="pay2">
+          <input type="radio" ngModel id="Numerar" name="payMethod" value="Numerar">
           <label for="Numerar">Numerar</label><br>
         </li>
         <li>
-          <input type="radio" id="Crypto" name="pay-method" value="pay3">
+          <input type="radio" ngModel id="Crypto" name="payMethod" value="Crypto">
           <label for="Crypto">Crypto</label><br>
         </li>
       </ul>
@@ -69,18 +65,18 @@
 
     <div class="form-field form-field2">
       <label for="start-date">Start Date</label>
-      <input type="date" id="start-date"/>
+      <input type="date" ngModel id="start-date" name="insuranceStartDate"/>
     </div>
 
     <div class="form-field text-input form-field2">
       <label for="end-date">End Date</label>
-      <input type="date" id="end-date"/>
+      <input type="date" id="end-date" ngModel name="insuranceEndDate"/>
     </div>
 
 
     <div class="form-field text-input form-field2">
       <label for="price">Price</label>
-      <input type="number" id="price"/>
+      <input type="number" ngModel id="price" name="insurancePrice"/>
     </div>
 
     <!--        <div class="form-field">-->
@@ -90,11 +86,11 @@
 
     <div class="form-field form-field2">
       <label from="text-area">Note</label>
-      <textarea id="text-area" name="notes" rows="4" cols="50"></textarea>
+      <textarea id="text-area" name="notes"ngModel rows="4" cols="50" name="insuranceNotes"></textarea>
     </div>
 
     <div class="action-button" id="buttons">
-      <button id="ADD" type="submit">Add person</button>
+      <button id="ADD" type="submit">Add insurance</button>
       <button  id="RESET" type="button">Reset form</button>
     </div>
 

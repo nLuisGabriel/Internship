@@ -1,0 +1,43 @@
+<!--<div *ngIf="this.ownerListComponent.length>0">-->
+<!--  <p>Car list length: {{this.ownerListComponent.length}}</p>-->
+<!--</div>-->
+
+<!--<div  *ngFor="let owner of ownerListComponent">-->
+
+<!--  {{owner.firstName}}-->
+
+<!--</div>-->
+
+<!--<div [ngSwitch]="genderType">-->
+<!--  <p *ngSwitchCase="GenderType.Masculin"> {{GenderType.Masculin}}</p>-->
+<!--  <p *ngSwitchCase="GenderType.Feminin"> {{GenderType.Feminin}}</p>-->
+<!--  <p *ngSwitchCase="GenderType.PreferSaNuRaspund"> {{GenderType.PreferSaNuRaspund}}</p>-->
+<!--</div>-->
+
+
+
+
+<p>Tabel</p>
+<table class="table" *ngIf="ownerListComponent.length>0; else emptyResults ">
+  <tr class="table-row">
+    <th>Index</th>
+    <th>ID</th>
+    <th>First Name</th>
+    <th>Last Name</th>
+    <th>Birth Date</th>
+    <th>CNP</th>
+    <th>Gender</th>
+    <th>Modificare</th>
+  </tr>
+  <tr *ngFor="let owner of this.ownerListComponent; let i=index" >
+    <td>{{i}}</td>
+    <td>{{owner.id}}</td>
+    <td>{{owner.firstName}}</td>
+    <td>{{owner.lastName}}</td>
+    <td>{{owner.birthDate}}</td>
+    <td>{{owner.cnp}}</td>
+    <td>{{owner.gender}}</td>
+    <td><button (click)="editOwner(i)"> Edit</button></td>
+  </tr>
+</table>
+<ng-template  #emptyResults > <p>Tabel gol</p> </ng-template>

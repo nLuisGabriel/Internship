@@ -1,0 +1,29 @@
+<table>
+  <tr>
+    <th>ID</th>
+<!--    <th>Brand</th>-->
+<!--    <th>Model</th>-->
+    <th>Brand-Model</th>
+    <th>Cubic Cap</th>
+    <th>Serial number</th>
+    <th>Type</th>
+    <th>Plates</th>
+    <th>Power</th>
+    <th>OwnerID</th>
+    <th>FuelType</th>
+  </tr>
+  <tr *ngFor="let car of this.carList; let i=index" [appZebraStrippedTable]="i">
+    <td>{{i}}</td>
+    <td>{{car |  myFirstPipe:'-' | uppercase}}</td>
+<!--    <td>{{car.model | uppercase}}</td>-->
+    <td>{{car.cubicCap | number : '2.2-3'}}</td>
+    <td>{{car.serialNumber}}</td>
+    <td>{{car.type}}</td>
+    <td>{{car.plates | platesPipe}}</td>
+    <td>{{car.power}}</td>
+    <td>{{car.ownerID}}</td>
+    <td>{{car.fuelType}}</td>
+    <td> <button (click)="editItem(i)">Edit</button></td>
+  </tr>
+
+</table>

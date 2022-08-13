@@ -1,0 +1,3 @@
+<app-new-car (addCarEvent)="addNewCar($event)"  [carToEdit]="selectedCar"  (modifiedCar)="UpdateCar($event)"  ></app-new-car>
+<app-car-list [carList]="carListWrapper"   (sendItemToEdit)="saveSelectedCar($event)"   ></app-car-list>
+
